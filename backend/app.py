@@ -10,10 +10,6 @@ from scripts import scraper
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
 @app.route('/professor', methods=['POST'])
 def process_professor():
     # See if request is in fact json

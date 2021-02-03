@@ -11,7 +11,7 @@ function App() {
   const handleButtonclick = async () => {
     var tidInput = document.getElementById("tid").value;
     try {
-      const resp = await axios.post("http://127.0.0.1:5000/professor", {
+      const resp = await axios.post("/professor", {
         tid: tidInput,
       });
       console.log(resp.data.reviews);
