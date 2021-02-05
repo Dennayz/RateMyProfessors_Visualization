@@ -1,7 +1,14 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import BasicInfo from "../components/BasicInfo";
 
 const Professor = () => {
-  return <div>professor</div>;
+  const location = useLocation();
+  return (
+    <>
+      <BasicInfo name={location.state.detail} />
+    </>
+  );
 };
 
 export default Professor;

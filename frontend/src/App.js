@@ -27,19 +27,19 @@ export default App;
 //   const [commentsList, setCommentsList] = useState([]);
 //   const [displayMessage, setDisplayMessage] = useState(null);
 
-//   const handleButtonclick = async () => {
-//     var tidInput = document.getElementById("tid").value;
-//     try {
-//       const resp = await axios.post("/professor", {
-//         tid: tidInput,
-//       });
-//       console.log(resp.data.reviews);
-//       setDisplayMessage(resp.data.name);
-//       setCommentsList(resp.data.reviews);
-//     } catch (error) {
-//       console.error("no professor found");
-//     }
-//   };
+// const handleButtonclick = async () => {
+//   var tidInput = document.getElementById("tid").value;
+//   try {
+//     const resp = await axios.post("/professor", {
+//       tid: tidInput,
+//     });
+//     console.log(resp.data.reviews);
+//     setDisplayMessage(resp.data.name);
+//     setCommentsList(resp.data.reviews);
+//   } catch (error) {
+//     console.error("no professor found");
+//   }
+// };
 
 //   return (
 //     <div className="App">

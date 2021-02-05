@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/SearchBar.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Professor from "../pages/Professor";
 
 const SearchBar = () => {
-  const displayInput = () => {
+  const history = useHistory();
+
+  const fetchData = async () => {
     var tidInput = document.getElementById("tid").value;
-    alert(tidInput);
+    try {
+      const resp = await axios.post("/professor", {
+        tid: tidInput,
+      });
+      if (Object.keys(resp.data).length) {
+        console.log(resp.data);
+        routeToProfessor(resp.data);
+      } else {
+        routeToError();
+      }
+    } catch (error) {
+      routeToError();
+      console.error("no professor found");
+    }
+  };
+
+  const routeToProfessor = (data) => {
+    let path = `/Professor`;
+    history.push({
+      pathname: path,
+      state: { detail: data.name },
+    });
+  };
+
+  const routeToError = () => {
+    let path = `/Error`;
+    history.push(path);
   };
 
   return (
     <div className="search-bar-container">
       <img alt="rate my professor logo" src="images/rmp-1.png" />
       <br />
-      <label for="tid" className="search-bar-label">
+      <label htmlFor="tid" className="search-bar-label">
         Find Your Professor
       </label>
       <p>(Insert professor's tid)</p>
@@ -23,7 +55,7 @@ const SearchBar = () => {
         type="text"
       ></input>
       <br />
-      <button className="search-button" onClick={displayInput}>
+      <button className="search-button" onClick={fetchData}>
         Search
       </button>
     </div>

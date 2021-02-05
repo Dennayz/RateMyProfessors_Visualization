@@ -26,8 +26,8 @@ def process_professor():
         return make_response('response data is not json', status='400')
 
     tid = json_data.get('tid')
-    data_lst = scraper.scrape_url(tid)
-    return data_lst
+    response_object = scraper.scrape_url(tid)
+    return response_object
 
 
 if __name__ == '__main__':

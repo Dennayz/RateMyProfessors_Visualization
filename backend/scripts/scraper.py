@@ -13,6 +13,7 @@ def scrape_url(tid):
         print("good website")
     else:
         print("bad website")
+        return {}
 
     soup = bs4.BeautifulSoup(res.text, 'lxml')
 
