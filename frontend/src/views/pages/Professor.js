@@ -6,7 +6,7 @@ const Professor = () => {
   const location = useLocation();
   return (
     <>
-      <BasicInfo name={location.state.detail} />
+      <BasicInfo basic={location.state.detail} />
     </>
   );
 };

@@ -30,7 +30,7 @@ const SearchBar = () => {
     let path = `/Professor`;
     history.push({
       pathname: path,
-      state: { detail: data.name },
+      state: { detail: data },
     });
   };
 
