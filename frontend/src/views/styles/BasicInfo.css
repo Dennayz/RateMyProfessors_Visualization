@@ -21,13 +21,27 @@
 
 .basic-info-container > h1 {
   font-size: 3rem;
-  /* color: white; */
-  /* text-decoration: none; */
+}
+
+.prof-link-container {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.prof-link {
+  font-size: 1.5em;
+  color: rgb(0, 112, 243);
+  /* color: lightgray; */
+  text-decoration: none;
+}
+
+.prof-link:hover {
+  text-decoration: underline;
 }
 
 .basic-info-container > h2 {
   font-size: 1rem;
-  color: lightblue;
+  color: rgb(200, 225, 255);
 }
 
 /* .stat-wrapper {

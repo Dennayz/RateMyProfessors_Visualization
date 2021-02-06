@@ -14,6 +14,16 @@ const BasicInfo = () => {
       </div>
       <br />
       <h1>{myResponse.name}</h1>
+      <div className="prof-link-container">
+        <a
+          href="https://www.google.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="prof-link"
+        >
+          <i className="fas fa-external-link-alt"></i>link
+        </a>
+      </div>
       <h2>{myResponse.details}</h2>
       <div className="stat-wrapper">
         <div className="stat-item">
