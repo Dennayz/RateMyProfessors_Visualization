@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/SearchBar.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import lottie from "lottie-web";
 
 const SearchBar = () => {
+  const [loading, setLoading] = useState(false);
+  const animate_loading = useRef(null);
   const history = useHistory();
 
+  useEffect(() => {
+    if (!loading) {
+      return;
+    }
+    lottie.loadAnimation({
+      container: animate_loading.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("./animate_loading.json"),
+    });
+  }, [loading]);
+
   const fetchData = async () => {
+    setLoading(true);
     var tidInput = document.getElementById("tid").value;
+    sessionStorage.setItem("tid", tidInput);
     try {
       const resp = await axios.post("/professor", {
         tid: tidInput,
@@ -49,6 +67,7 @@ const SearchBar = () => {
       <button className="search-button" onClick={fetchData}>
         Search
       </button>
+      <div className="animate-loading" ref={animate_loading}></div>
     </div>
   );
 };

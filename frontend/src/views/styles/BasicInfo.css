@@ -1,4 +1,5 @@
 .basic-info-container {
+  padding: 4rem;
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   display: flex;
   flex-direction: column;
@@ -12,4 +13,19 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.rmp-img {
+  display: block;
+}
+
+.basic-info-container > a {
+  font-size: 4rem;
+  color: white;
+  text-decoration: none;
+}
+
+.basic-info-container > h2 {
+  font-size: 1rem;
+  color: lightblue;
 }
