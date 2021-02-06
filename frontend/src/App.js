@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Search from "./views/pages/Search";
 import Professor from "./views/pages/Professor";

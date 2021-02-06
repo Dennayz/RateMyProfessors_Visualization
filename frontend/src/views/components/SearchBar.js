@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/SearchBar.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import Professor from "../pages/Professor";
 
 const SearchBar = () => {
   const history = useHistory();
@@ -14,28 +12,21 @@ const SearchBar = () => {
       const resp = await axios.post("/professor", {
         tid: tidInput,
       });
-      if (Object.keys(resp.data).length) {
-        console.log(resp.data);
-        routeToProfessor(resp.data);
-      } else {
-        routeToError();
-      }
+      console.log(resp.data);
+      sessionStorage.setItem("responseData", JSON.stringify(resp.data));
+      routeChange(resp.data);
     } catch (error) {
-      routeToError();
-      console.error("no professor found");
+      console.error(error);
     }
   };
 
-  const routeToProfessor = (data) => {
-    let path = `/Professor`;
-    history.push({
-      pathname: path,
-      state: { detail: data },
-    });
-  };
-
-  const routeToError = () => {
-    let path = `/Error`;
+  const routeChange = (data) => {
+    let path = null;
+    if (Object.keys(data).length) {
+      path = `/Professor`;
+    } else {
+      path = `/Error`;
+    }
     history.push(path);
   };
 
