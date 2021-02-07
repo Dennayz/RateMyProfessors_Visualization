@@ -11,11 +11,11 @@
   overflow: auto; */
   color: white;
   text-align: center;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
 }
 
-.rmp-img {
+.animate-profile {
   width: 200px;
 }
 
