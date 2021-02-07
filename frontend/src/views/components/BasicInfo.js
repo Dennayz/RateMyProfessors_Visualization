@@ -12,7 +12,6 @@ const BasicInfo = () => {
       <div>
         <img className="rmp-img" alt="rmp-logo" src="images/rmp-1.png" />
       </div>
-      <br />
       <h1>{myResponse.name}</h1>
       <div className="prof-link-container">
         <a
