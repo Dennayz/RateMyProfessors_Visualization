@@ -34,8 +34,21 @@
   text-decoration: none;
 }
 
+.external {
+  position: relative;
+  top: -6px;
+}
+
+.fa-external-link-alt {
+  padding: 3px;
+}
+
 .prof-link:hover {
   text-decoration: underline;
+}
+
+.fa-external-link-alt {
+  font-size: 0.5rem;
 }
 
 .basic-info-container > h2 {

@@ -21,7 +21,10 @@ const BasicInfo = () => {
           rel="noreferrer"
           className="prof-link"
         >
-          <i className="fas fa-external-link-alt"></i>link
+          Link
+          <span className="external">
+            <i className="fas fa-external-link-alt"></i>
+          </span>
         </a>
       </div>
       <h2>{myResponse.details}</h2>
