@@ -1,4 +1,24 @@
-.overlap-me {
-  margin-top: -15px;
-  color: red;
+.charts-container {
+  margin-top: -65px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.charts-wrapper {
+  padding: 2rem;
+  gap: 1.5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  display: inline-flex;
+  flex: 1;
+}
+
+.chart-item {
+  border: 1px solid black;
+  background-color: white;
 }
