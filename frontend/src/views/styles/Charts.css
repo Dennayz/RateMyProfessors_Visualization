@@ -19,6 +19,11 @@
 }
 
 .chart-item {
-  border: 1px solid black;
+  box-shadow: 2px 2px 4px #000000;
+  border-radius: 11px;
   background-color: white;
+}
+
+.chart-div {
+  padding: 2rem;
 }
