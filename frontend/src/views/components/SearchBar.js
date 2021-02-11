@@ -25,6 +25,7 @@ const SearchBar = () => {
   const fetchData = async () => {
     setLoading(true);
     var tidInput = document.getElementById("tid").value;
+    sessionStorage.clear();
     // sessionStorage.setItem("tid", tidInput);
     try {
       const resp = await axios.get("/professor", { params: { tid: tidInput } });

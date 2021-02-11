@@ -11,9 +11,7 @@ const SentimentAnalysis = (reviewsList) => {
   var sentimentMap = { positive: [], negative: [], neutral: [] };
 
   var sentimentList = [];
-  if (reviewsList.length === 0) {
-    return;
-  }
+
   reviewsList.forEach((review) => {
     var result = sentiment.analyze(review.comment);
     if (result.score > 0) {
