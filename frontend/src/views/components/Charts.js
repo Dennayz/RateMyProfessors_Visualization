@@ -58,15 +58,15 @@ const Charts = () => {
     <div className="charts-container">
       <div className="charts-wrapper">
         <div className="chart-item">
-          <span>Sentiment Analysis Comments</span>
+          <span className="chart-header">Sentiment Analysis Comments</span>
           <div className="chart-div">{sentimentChart}</div>
         </div>
         <div className="chart-item">
-          <span>Top Courses Taught</span>
+          <span className="chart-header">Top Courses Taught</span>
           <div className="chart-div">{coursesChart}</div>
         </div>
         <div className="chart-item">
-          <span>Top Feedback</span>
+          <span className="chart-header">Top Feedback</span>
           <div className="chart-div">{feedbackChart}</div>
         </div>
       </div>

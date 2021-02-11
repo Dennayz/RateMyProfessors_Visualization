@@ -29,3 +29,8 @@
 .chart-div {
   padding: 2rem;
 }
+
+.chart-header {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
