@@ -18,20 +18,41 @@ const ReviewSecton = () => {
       <div className="review-wrapper">
         <div className="review-header-wrapper">
           <h2 className="review-header">Top Reviews</h2>
+          <div className="sentiment-options-container" id="options-container">
+            <label htmlFor="sentiment-options">By: </label>
+            <select
+              id="sentiment-options"
+              name="sentiment-options"
+              //   onChange={updateTransformatioOptions}
+            >
+              <option value="" id="unselected" selected disabled hidden>
+                --Select--
+              </option>
+            </select>
+          </div>
         </div>
-        <div className="review-section-div">
+        <ul className="review-section-div">
           {haveReviews
             ? reviews[0].map((comment, index) => (
-                <div key={index}>
+                <li key={index}>
                   <section>{comment.comment}</section>
                   <br />
-                </div>
+                </li>
               ))
             : ""}
-        </div>
+        </ul>
       </div>
     </div>
   );
 };
 
 export default ReviewSecton;
+
+// {haveReviews
+//     ? reviews[0].map((comment, index) => (
+//         <div key={index}>
+//           <section>{comment.comment}</section>
+//           <br />
+//         </div>
+//       ))
+//     : ""}

@@ -11,7 +11,14 @@
 }
 
 .review-header-wrapper {
-  max-width: 260px;
+  /* max-width: 210px; */
+  display: flex;
+}
+
+.sentiment-options-container {
+  margin-left: 3rem;
+  position: relative;
+  top: 17px;
 }
 
 .review-header {
