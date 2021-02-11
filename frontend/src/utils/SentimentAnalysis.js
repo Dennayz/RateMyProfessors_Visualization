@@ -8,6 +8,8 @@ const Sentiments = {
 };
 
 const SentimentAnalysis = (reviewsList) => {
+  var sentimentMap = { positive: [], negative: [], neutral: [] };
+
   var sentimentList = [];
   if (reviewsList.length === 0) {
     return;
@@ -19,18 +21,22 @@ const SentimentAnalysis = (reviewsList) => {
         comment: review.comment,
         sentiment: Sentiments.POSITIVE,
       });
+      sentimentMap["positive"].push(review);
     } else if (result.score === 0) {
       sentimentList.push({
         comment: review.comment,
         sentiment: Sentiments.NEUTRAL,
       });
+      sentimentMap["neutral"].push(review);
     } else {
       sentimentList.push({
         comment: review.comment,
         sentiment: Sentiments.NEGATIVE,
       });
+      sentimentMap["negative"].push(review);
     }
   });
+  sessionStorage.setItem("sentimentMap", JSON.stringify(sentimentMap));
   return sentimentList;
 };
 
