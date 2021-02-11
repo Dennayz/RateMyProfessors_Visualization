@@ -1,0 +1,24 @@
+.review-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-wrapper {
+  padding: 2rem;
+  width: 1620px;
+}
+
+.review-header-wrapper {
+  max-width: 260px;
+}
+
+.review-header {
+  font-size: 2rem;
+  border-bottom: 3px dashed;
+}
+
+.review-section-div {
+  text-align: left;
+}
