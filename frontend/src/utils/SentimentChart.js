@@ -1,25 +1,25 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import { sentimentAnalysisColor } from "./ChartColors";
 
 const SentimentChart = ({ labels, data }) => {
+  const backgroundColor = labels.map((color) => {
+    return sentimentAnalysisColor[color][0];
+  });
+  const borderColor = labels.map((color) => {
+    return sentimentAnalysisColor[color][1];
+  });
   return (
     <>
       <Pie
         data={{
           labels: labels,
+          responsiveness: true,
           datasets: [
             {
               data: data,
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.7)",
-                "rgba(54, 162, 235, 0.7)",
-                "rgba(255, 206, 86, 0.7)",
-              ],
-              borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-              ],
+              backgroundColor: backgroundColor,
+              borderColor: borderColor,
               borderWidth: 1,
             },
           ],

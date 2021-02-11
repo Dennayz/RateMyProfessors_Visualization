@@ -7,11 +7,12 @@ const CourseChart = ({ labels, data }) => {
       <Bar
         data={{
           labels: labels,
+          responsiveness: true,
           datasets: [
             {
               data: data,
-              backgroundColor: "rgb(0,206,209, 0.7)",
-              borderColor: "rgb(0,206,209, 1.0)",
+              backgroundColor: "rgb(92,170,199, 0.7)",
+              borderColor: "rgb(92,170,199, 1.0)",
               borderWidth: 1,
             },
           ],
@@ -39,3 +40,4 @@ const CourseChart = ({ labels, data }) => {
 };
 
 export default CourseChart;
+//rgb(0,206,209, 0.7)
