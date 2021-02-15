@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/ReviewSection.css";
 import { storage } from "../../models/storage";
+import DisplayComments from "../../utils/DisplayComments";
 
 const ReviewSecton = () => {
   const reviewData = storage("sentimentMap");
   var haveReviews = true;
-  var reviews;
   if (reviewData === null) {
     haveReviews = false;
-  } else if (reviewData) {
-    reviews = Object.values(reviewData);
-    console.log(Object.keys(reviewData));
-    console.log(reviews);
   }
+
+  const [currentComments, setCurrentComments] = useState([]);
+  const changeComments = () => {
+    var selectedValue = document.getElementById("sentiment-options");
+    if (selectedValue.value === "positive") {
+      setCurrentComments(reviewData.positive);
+    } else if (selectedValue.value === "neutral") {
+      setCurrentComments(reviewData.neutral);
+    } else {
+      setCurrentComments(reviewData.negative);
+    }
+  };
+
   return (
     <div className="review-section-container">
       <div className="review-wrapper">
@@ -23,23 +32,19 @@ const ReviewSecton = () => {
             <select
               id="sentiment-options"
               name="sentiment-options"
-              //   onChange={updateTransformatioOptions}
+              onChange={changeComments}
             >
               <option value="" id="unselected" selected disabled hidden>
                 --Select--
               </option>
+              <option value="positive">Positive</option>
+              <option value="neutral">Neutral</option>
+              <option value="negative">Negative</option>
             </select>
           </div>
         </div>
         <ul className="review-section-div">
-          {haveReviews
-            ? reviews[0].map((comment, index) => (
-                <li key={index}>
-                  <section>{comment.comment}</section>
-                  <br />
-                </li>
-              ))
-            : ""}
+          {haveReviews ? <DisplayComments comments={currentComments} /> : ""}
         </ul>
       </div>
     </div>
