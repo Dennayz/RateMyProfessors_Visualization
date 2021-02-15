@@ -1,11 +1,12 @@
 import React from "react";
+import ReviewCard from "../views/components/ReviewCard";
 
 const DisplayComments = ({ comments }) => {
   return (
     <>
       {comments.map((comment, index) => (
         <li key={index}>
-          <section>{comment.comment}</section>
+          <ReviewCard comment={comment} />
           <br />
         </li>
       ))}
