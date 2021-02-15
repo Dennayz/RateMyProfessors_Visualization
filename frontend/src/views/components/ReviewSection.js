@@ -4,13 +4,17 @@ import { storage } from "../../models/storage";
 import DisplayComments from "../../utils/DisplayComments";
 
 const ReviewSecton = () => {
+  const [currentComments, setCurrentComments] = useState([]);
   const reviewData = storage("sentimentMap");
   var haveReviews = true;
+  var availableSentiment = [];
+
   if (reviewData === null) {
     haveReviews = false;
+  } else {
+    availableSentiment = Object.keys(reviewData);
   }
 
-  const [currentComments, setCurrentComments] = useState([]);
   const changeComments = () => {
     var selectedValue = document.getElementById("sentiment-options");
     if (selectedValue.value === "positive") {
@@ -30,16 +34,19 @@ const ReviewSecton = () => {
           <div className="sentiment-options-container" id="options-container">
             <label htmlFor="sentiment-options">By: </label>
             <select
+              defaultValue={"--Select--"}
               id="sentiment-options"
               name="sentiment-options"
               onChange={changeComments}
             >
-              <option value="" id="unselected" selected disabled hidden>
+              <option value="--Select--" id="unselected" disabled>
                 --Select--
               </option>
-              <option value="positive">Positive</option>
-              <option value="neutral">Neutral</option>
-              <option value="negative">Negative</option>
+              {availableSentiment.map((dropdown, index) => (
+                <option value={dropdown} key={index}>
+                  {dropdown}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -52,12 +59,3 @@ const ReviewSecton = () => {
 };
 
 export default ReviewSecton;
-
-// {haveReviews
-//     ? reviews[0].map((comment, index) => (
-//         <div key={index}>
-//           <section>{comment.comment}</section>
-//           <br />
-//         </div>
-//       ))
-//     : ""}
