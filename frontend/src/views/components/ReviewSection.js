@@ -51,6 +51,7 @@ const ReviewSecton = () => {
           </div>
         </div>
         <ul className="review-section-div">
+          <br />
           {haveReviews ? <DisplayComments comments={currentComments} /> : ""}
         </ul>
       </div>
