@@ -27,16 +27,14 @@
   border-bottom: 3px dashed;
 }
 
-.review-section-wrapper {
+/* .review-section-wrapper {
   display: block;
   box-sizing: inherit;
-}
+} */
 
 .review-section-list {
   display: grid;
-  /* grid-auto-flow: column; */
   position: relative;
-  /* grid-template-columns: auto auto auto auto; */
   grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
   gap: 1rem;
   list-style-type: none;
