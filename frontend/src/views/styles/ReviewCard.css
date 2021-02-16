@@ -7,7 +7,8 @@
 .heading-div-second {
   display: inline-block;
   width: 25%;
-  /* text-align: right; */
+  text-align: right;
+  padding-right: 1rem;
 }
 
 .heading-div-third {
@@ -25,11 +26,16 @@
 .list-item {
   border: solid;
   padding: 1rem;
-  background: lightblue;
+  background: #e4f2f7;
   border-radius: 11px;
   border: 1px solid;
 }
 
+.list-item:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 0.2s ease-out;
+}
 .comment-section {
   padding-top: 1.5rem;
 }
