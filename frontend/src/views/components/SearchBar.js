@@ -26,11 +26,11 @@ const SearchBar = () => {
     setLoading(true);
     var tidInput = document.getElementById("tid").value;
     sessionStorage.clear();
-    // sessionStorage.setItem("tid", tidInput);
     try {
       const resp = await axios.get("/professor", { params: { tid: tidInput } });
       console.log(resp.data);
       sessionStorage.setItem("responseData", JSON.stringify(resp.data));
+      sessionStorage.setItem("tid", tidInput);
       routeChange(resp.data);
     } catch (error) {
       console.error(error);

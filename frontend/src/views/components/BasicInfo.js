@@ -4,8 +4,8 @@ import { storage } from "../../models/storage";
 import lottie from "lottie-web";
 
 const BasicInfo = () => {
-  // var tid = storage("tid");
-  // var rmp_link = "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=" + tid;
+  var tid = storage("tid");
+  var rmp_link = "https://www.ratemyprofessors.com/ShowRatings.jsp?tid=" + tid;
   var myResponse = storage("responseData");
   const animate_profile = useRef(null);
 
@@ -25,7 +25,7 @@ const BasicInfo = () => {
       <h1>{myResponse.name}</h1>
       <div className="prof-link-container">
         <a
-          href="https://www.google.com/"
+          href={rmp_link}
           target="_blank"
           rel="noreferrer"
           className="prof-link"
