@@ -50,10 +50,11 @@ const ReviewSecton = () => {
             </select>
           </div>
         </div>
-        <ul className="review-section-div">
-          <br />
-          {haveReviews ? <DisplayComments comments={currentComments} /> : ""}
-        </ul>
+        <div className="review-section-wrapper">
+          <ul className="review-section-list">
+            {haveReviews ? <DisplayComments comments={currentComments} /> : ""}
+          </ul>
+        </div>
       </div>
     </div>
   );

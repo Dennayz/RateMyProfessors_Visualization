@@ -4,11 +4,13 @@ import "../styles/ReviewCard.css";
 const ReviewCard = ({ comment }) => {
   return (
     <div className="comment-container">
-      <section>{comment.comment}</section>
-      <section>{comment.difficulty}</section>
-      <section>{comment.course}</section>
-      <section>{comment.time_stamp}</section>
-      <section>{comment.quality}</section>
+      <div className="heading-wrapper">
+        <span className="heading-div">{comment.course}</span>
+        <span className="heading-div-second">{comment.quality}</span>
+        <span className="heading-div-third">{comment.difficulty}</span>
+        <span className="heading-div-fourth">{comment.time_stamp}</span>
+      </div>
+      <section className="comment-section">{comment.comment}</section>
     </div>
   );
 };

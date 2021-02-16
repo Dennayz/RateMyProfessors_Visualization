@@ -11,6 +11,7 @@
 }
 
 .review-header-wrapper {
+  padding-bottom: 1rem;
   /* max-width: 210px; */
   display: flex;
 }
@@ -26,7 +27,17 @@
   border-bottom: 3px dashed;
 }
 
-.review-section-div {
-  text-align: left;
+.review-section-wrapper {
+  display: block;
+  box-sizing: inherit;
+}
+
+.review-section-list {
+  display: grid;
+  /* grid-auto-flow: column; */
+  position: relative;
+  /* grid-template-columns: auto auto auto auto; */
+  grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+  gap: 1rem;
   list-style-type: none;
 }

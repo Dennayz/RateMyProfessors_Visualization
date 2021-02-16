@@ -1,5 +1,35 @@
-.comment-container {
+.heading-div {
+  display: inline-block;
+  width: 25%;
+  font-weight: bold;
+}
+
+.heading-div-second {
+  display: inline-block;
+  width: 25%;
+  /* text-align: right; */
+}
+
+.heading-div-third {
+  display: inline-block;
+  width: 25%;
+  /* text-align: left; */
+}
+
+.heading-div-fourth {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+}
+
+.list-item {
+  border: solid;
+  padding: 1rem;
   background: lightblue;
   border-radius: 11px;
   border: 1px solid;
+}
+
+.comment-section {
+  padding-top: 1.5rem;
 }
