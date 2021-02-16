@@ -40,4 +40,3 @@ const CourseChart = ({ labels, data }) => {
 };
 
 export default CourseChart;
-//rgb(0,206,209, 0.7)
