@@ -1,3 +1,3 @@
 # App Demo
 
-![](https://user-images.githubusercontent.com/58843979/108050753-e3410e80-6ffe-11eb-81e4-b96f852148e9.mov)
+![demo_gif](https://user-images.githubusercontent.com/58843979/108050990-3024e500-6fff-11eb-9d0e-df0ed23bea3d.gif)
