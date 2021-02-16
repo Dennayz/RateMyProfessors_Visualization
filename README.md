@@ -1,3 +1,3 @@
 # App Demo
 
-![](https://github.com/Dennayz/CMPT276/blob/master/menu.png)
+![](https://github.com/Dennayz/RMP_Visualization/blob/main/demo-trimmed.mov)
