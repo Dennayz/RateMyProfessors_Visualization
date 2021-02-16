@@ -2,7 +2,8 @@ import itertools
 import requests
 import bs4
 
-from scripts import convert_json
+from scripts.Professor import Professor
+
 
 def scrape_url(tid):
     tid_input = tid
@@ -63,9 +64,7 @@ def scrape_url(tid):
                                                                                         difficulties, comments):
             total_review_list.append([course, time_stamp, quality, difficulty, comment])
 
-    json_object = convert_json.convert_json(prof_name.text, prof_rating.text, prof_details.text, prof_take_percentage,
-                                            prof_difficulty, prof_tags_list, total_review_list)
+    prof = Professor(prof_name.text, prof_rating.text, prof_details.text, prof_take_percentage,
+                     prof_difficulty, prof_tags_list, total_review_list)
 
-    return json_object
-
-
+    return prof.convert_to_json()
