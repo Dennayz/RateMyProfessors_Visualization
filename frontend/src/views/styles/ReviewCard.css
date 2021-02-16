@@ -24,11 +24,9 @@
 }
 
 .list-item {
-  border: solid;
   padding: 1rem;
   background: #e4f2f7;
   border-radius: 11px;
-  border: 1px solid;
 }
 
 .list-item:hover {
