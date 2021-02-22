@@ -1,8 +1,8 @@
 # Rate My Professors Visualization
 
-This project was meant to visualize alot of the data shown in the Rate My Professors website and give the users insight on the good, bad, and neutral reviews given by past students. These reviews will be displayed visually for users to quickly grasp and analysis the data. This way students do not need to scroll through many reviews and contemplate whether the review was good or bad. This app will decide for you! 
+This project was meant to visualize alot of the data shown in the Rate My Professors website and give the users insight on the good, bad, and neutral reviews given by past students. These reviews will be displayed visually for users to quickly grasp and analyze the data. This way students do not need to scroll through many reviews and contemplate whether the review was good or bad. This app will decide for you! 
 
-Also, the project was inspired because I needed to find a solution to quickly figure out if the professor is right for me. Also data visualization is very interesting!
+I built this project mainly for myself because I needed to find a solution to quickly figure out if the professor is right for me. I was tired of scrolling through many reviews and having to read each one of them and decide if it was a bad review or not.  Also data visualization is very interesting!
 
 ## App Demo
 
