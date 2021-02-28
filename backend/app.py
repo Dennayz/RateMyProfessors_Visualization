@@ -6,7 +6,7 @@ from scripts import scraper
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/professor', methods=['GET', 'POST'])
+@app.route('/api/professor', methods=['GET', 'POST'])
 def process_professor():
     """
     handles user search for professors and professors obtained from the history table
