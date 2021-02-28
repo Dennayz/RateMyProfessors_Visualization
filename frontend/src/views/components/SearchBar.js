@@ -30,20 +30,23 @@ const SearchBar = () => {
       const resp = await axios.get("/professor", { params: { tid: tidInput } });
       sessionStorage.setItem("responseData", JSON.stringify(resp.data));
       sessionStorage.setItem("tid", tidInput);
-      routeChange(resp.data);
+      routeChange(resp.data, tidInput);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const routeChange = (data) => {
-    let path = null;
+  const routeChange = (data, tid) => {
+    let pathname = null;
     if (Object.keys(data).length) {
-      path = `/Professor`;
+      pathname = "/Professor";
     } else {
-      path = `/Error`;
+      pathname = `/Error`;
     }
-    history.push(path);
+    history.push({
+      pathname,
+      search: "?" + new URLSearchParams({ tid: tid }).toString(),
+    });
   };
 
   return (
