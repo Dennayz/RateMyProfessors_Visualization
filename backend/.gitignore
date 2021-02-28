@@ -17,6 +17,7 @@ _mailinglist
 docs/_build/
 .vscode
 .venv/
+db.yaml
 
 # Coverage reports
 htmlcov/
