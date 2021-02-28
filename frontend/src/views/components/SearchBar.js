@@ -27,7 +27,9 @@ const SearchBar = () => {
     var tidInput = document.getElementById("tid").value;
     sessionStorage.clear();
     try {
-      const resp = await axios.get("/professor", { params: { tid: tidInput } });
+      const resp = await axios.get("/api/professor", {
+        params: { tid: tidInput },
+      });
       sessionStorage.setItem("responseData", JSON.stringify(resp.data));
       sessionStorage.setItem("tid", tidInput);
       routeChange(resp.data, tidInput);
