@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const HistoryTable = () => {
+  const [professorsList, setProfessorsList] = useState([]);
   return <div>history table</div>;
 };
 
