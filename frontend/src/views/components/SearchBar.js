@@ -3,6 +3,7 @@ import "../styles/SearchBar.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import lottie from "lottie-web";
+import { processProfessor } from "../../controller/api";
 
 const SearchBar = () => {
   const [loading, setLoading] = useState(false);
@@ -26,16 +27,10 @@ const SearchBar = () => {
     setLoading(true);
     var tidInput = document.getElementById("tid").value;
     sessionStorage.clear();
-    try {
-      const resp = await axios.get("/api/professors", {
-        params: { tid: tidInput },
-      });
-      sessionStorage.setItem("responseData", JSON.stringify(resp.data));
-      sessionStorage.setItem("tid", tidInput);
-      routeChange(resp.data, tidInput);
-    } catch (error) {
-      console.error(error);
-    }
+    const professorData = await processProfessor(tidInput);
+    sessionStorage.setItem("responseData", JSON.stringify(professorData));
+    sessionStorage.setItem("tid", tidInput);
+    routeChange(professorData, tidInput);
   };
 
   const routeChange = (data, tid) => {
