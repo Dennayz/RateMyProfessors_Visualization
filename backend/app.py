@@ -6,7 +6,7 @@ from scripts import scraper
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/api/professor', methods=['POST'])
+@app.route('/api/professors', methods=['POST'])
 def process_professor():
     """
     handles professor's information and saves it into database
@@ -20,7 +20,7 @@ def process_professor():
         db.insert_professor(tid, response_object.get("name"), response_object.get("details"))
     return response_object, 200
 
-@app.route('/api/professor/<string:tid>', methods=['GET'])
+@app.route('/api/professors/<string:tid>', methods=['GET'])
 def get_professor_by_tid(tid):
     """
     get the specified professor from history table
@@ -42,7 +42,7 @@ def fetch_all_professors():
     return result, 200
 
 
-@app.route('/api/delete/<string:tid>', methods=['DELETE'])
+@app.route('/api/professors/delete/<string:tid>', methods=['DELETE'])
 def remove_professor(tid):
     """
     remove the specified professor from history table
