@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/SearchBar.css";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import lottie from "lottie-web";
 import { processProfessor } from "../../controller/api";
