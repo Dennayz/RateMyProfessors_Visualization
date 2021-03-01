@@ -41,9 +41,9 @@ const SearchBar = () => {
   const routeChange = (data, tid) => {
     let pathname = null;
     if (Object.keys(data).length) {
-      pathname = "/Professor";
+      pathname = "/professor";
     } else {
-      pathname = `/Error`;
+      pathname = `/error`;
     }
     history.push({
       pathname,

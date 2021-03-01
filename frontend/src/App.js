@@ -11,9 +11,9 @@ function App() {
       <HashRouter basename="/">
         <Switch>
           <Route path="/" exact component={Search} />
-          <Route path="/Professor" component={Professor} />
-          <Route path="/Error" component={Error} />
-          <Route path="/History" component={History} />
+          <Route path="/professor" component={Professor} />
+          <Route path="/error" component={Error} />
+          <Route path="/history" component={History} />
         </Switch>
       </HashRouter>
     </>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/HistoryTable.css";
 
 const HistoryTable = () => {
   const [professorsList, setProfessorsList] = useState([]);
