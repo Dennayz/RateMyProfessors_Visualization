@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
-import { fetchAllProfessors, getProfessorByTid } from "../../controller/api";
+import {
+  fetchAllProfessors,
+  getProfessorByTid,
+  deleteProfessorByTid,
+} from "../../controller/api";
 
 import "../styles/HistoryTable.css";
 
@@ -50,25 +54,32 @@ const HistoryTable = () => {
         sort: false,
       },
     },
-    {
-      name: "action",
-      label: "Delete",
-      options: {
-        filter: true,
-        sort: false,
-      },
-    },
+    // {
+    //   name: "action",
+    //   label: "Delete",
+    //   options: {
+    //     filter: true,
+    //     sort: false,
+    //   },
+    // },
   ];
 
   const options = {
     filterType: "checkbox",
     tableBodyHeight: "650px",
     selectableRowsHeader: false,
-    selectableRows: "none",
+    selectableRows: "single",
     selectableRowsOnClick: false,
     rowHover: true,
     onRowClick: (rowData, rowMeta) => {
       fetchDataById(rowData[0]);
+    },
+    onRowsDelete: (rowsDeleted, newTableData) => {
+      const oldProfs = professorsList.map((prof) => prof.tid);
+      const existingProfs = newTableData.map((prof) => prof[0]);
+
+      const difference = oldProfs.filter((x) => !existingProfs.includes(x));
+      deleteProf(difference[0]);
     },
   };
 
@@ -81,6 +92,12 @@ const HistoryTable = () => {
       pathname: `/professor`,
       search: "?" + new URLSearchParams({ tid: tid }).toString(),
     });
+  };
+
+  const deleteProf = async (tid) => {
+    await deleteProfessorByTid(tid);
+    const resp = await fetchAllProfessors();
+    setProfessorsList(resp);
   };
 
   return (
