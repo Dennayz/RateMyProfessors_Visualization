@@ -54,14 +54,6 @@ const HistoryTable = () => {
         sort: false,
       },
     },
-    // {
-    //   name: "action",
-    //   label: "Delete",
-    //   options: {
-    //     filter: true,
-    //     sort: false,
-    //   },
-    // },
   ];
 
   const options = {
