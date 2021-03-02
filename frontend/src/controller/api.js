@@ -14,7 +14,7 @@ export const processProfessor = async (tid) => {
 export const fetchAllProfessors = async () => {
   try {
     const resp = await axios.get("/api/history");
-    return resp.data;
+    return resp.data.data;
   } catch (error) {
     console.log(error);
   }

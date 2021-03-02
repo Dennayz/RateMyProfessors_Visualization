@@ -29,19 +29,30 @@ const SearchBar = () => {
     const professorData = await processProfessor(tidInput);
     sessionStorage.setItem("responseData", JSON.stringify(professorData));
     sessionStorage.setItem("tid", tidInput);
-    routeChange(professorData, tidInput);
+
+    if (Object.keys(professorData).length) {
+      routeToProfessor(tidInput);
+    } else {
+      routeToError();
+    }
   };
 
-  const routeChange = (data, tid) => {
-    let pathname = null;
-    if (Object.keys(data).length) {
-      pathname = "/professor";
-    } else {
-      pathname = `/error`;
-    }
+  const routeToProfessor = (tid) => {
     history.push({
-      pathname,
+      pathname: `/professor`,
       search: "?" + new URLSearchParams({ tid: tid }).toString(),
+    });
+  };
+
+  const routeToError = () => {
+    history.push({
+      pathname: `/error`,
+    });
+  };
+
+  const RouteToHistory = () => {
+    history.push({
+      pathname: `/history`,
     });
   };
 
@@ -63,6 +74,9 @@ const SearchBar = () => {
       <br />
       <button className="search-button" onClick={fetchData}>
         Search
+      </button>
+      <button className="history-button" onClick={RouteToHistory}>
+        History
       </button>
       <div className="animate-loading" ref={animate_loading}></div>
     </div>
