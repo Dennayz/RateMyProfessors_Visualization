@@ -51,7 +51,7 @@ class Database:
             professor_list.append(prof_data)
 
         self.close_connection()
-        return str(professor_list)
+        return professor_list
 
     def insert_professor(self, prof_tid, prof_name, prof_bio):
         """

@@ -39,7 +39,8 @@ def fetch_all_professors():
     """
     db = Database()
     result = db.get_all_professors()
-    return result, 200
+
+    return {"data": result}, 200
 
 
 @app.route('/api/professors/delete/<string:tid>', methods=['DELETE'])
