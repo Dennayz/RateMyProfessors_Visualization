@@ -43,7 +43,7 @@ def fetch_all_professors():
     return {"data": result}, 200
 
 
-@app.route('/api/professors/delete/<string:tid>', methods=['DELETE'])
+@app.route('/api/professors/<string:tid>', methods=['DELETE'])
 def remove_professor(tid):
     """
     remove the specified professor from history table
