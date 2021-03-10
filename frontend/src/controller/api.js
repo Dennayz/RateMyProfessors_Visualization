@@ -31,7 +31,7 @@ export const getProfessorByTid = async (tid) => {
 
 export const deleteProfessorByTid = async (tid) => {
   try {
-    await axios.delete(`/api/professors/delete/${tid}`);
+    await axios.delete(`/api/professors/${tid}`);
   } catch (error) {
     console.log(error);
   }
